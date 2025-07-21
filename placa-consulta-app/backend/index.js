@@ -1,12 +1,11 @@
+require('dotenv').config(); // se estiver usando .env para o token
 const express = require('express');
 const cors = require('cors');
 const app = express();
 const axios = require('axios');
 
-require('dotenv').config(); // se estiver usando .env para o token
-
 const PORT = 5000;
-const API_TOKEN = process.env.PLACA_TOKEN;
+const API_TOKEN = process.env.API_TOKEN;
 
 app.use(cors());
 
@@ -55,3 +54,4 @@ app.get('/api/consulta', async (req, res) => {
 
 
 app.listen(PORT, () => console.log(`Backend rodando em http://localhost:${PORT}`));
+app.listen(API_TOKEN, () => console.log(`API Token: ${API_TOKEN}`));
