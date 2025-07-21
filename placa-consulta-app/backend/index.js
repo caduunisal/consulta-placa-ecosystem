@@ -38,10 +38,11 @@ app.get('/api/consulta', async (req, res) => {
 
   try {
     const response = await axios.get(`https://api.consultarplaca.com.br/v2/consultarPlaca`, {
-        params: { placa },
-        headers: {
-            Authorization: `Basic ${Buffer.from(`${API_TOKEN}:`).toString('base64')}`
-        }
+      params: { placa },
+      auth: {
+        username: API_TOKEN,
+        password: ''
+      }
     });
 
     return res.json(response.data);
