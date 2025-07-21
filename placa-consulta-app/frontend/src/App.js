@@ -36,7 +36,8 @@ function App() {
     const consultarPlaca = async () => {
     try {
         // const res = await axios.get(`http://localhost:5000/api/consulta?placa=${placa}`);
-        const res = await axios.get(`http://172.19.97.244:5000/api/consulta?placa=${placa}`);
+        // const res = await axios.get(`http://172.19.97.244:5000/api/consulta?placa=${placa}`);
+        const res = await axios.get(`https://api.consultarplaca.com.br/v2/consultarPlaca?placa=${placa}`)
         setDados(res.data);
         setErro(null);
     } catch (e) {
