@@ -21,4 +21,6 @@ app.get('/api/consulta', (req, res) => {
     }
 });
 
-app.listen(PORT, () => console.log(`Backend rodando em http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () =>
+  console.log(`Backend acessível em http://localhost:${PORT}`)
+);
