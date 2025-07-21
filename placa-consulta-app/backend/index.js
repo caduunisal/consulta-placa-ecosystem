@@ -47,7 +47,14 @@ app.get('/api/consulta', async (req, res) => {
     return res.json(response.data);
 
   } catch (error) {
-    console.error("Erro na consulta:", error?.response?.data || error.message);
+    // console.error("Erro na consulta:", error?.response?.data || error.message);
+    console.error("Erro na consulta:", {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+        headers: error.response?.headers,
+    });
+
     return res.status(500).json({ erro: "Erro ao consultar a API externa" });
   }
 });
