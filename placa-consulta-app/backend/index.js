@@ -5,7 +5,7 @@ const PORT = 5000;
 app.use(cors());
 
 app.get('/api/consulta', (req, res) => {
-    const { placa } = req.query;
+    const placa = (req.query.placa || '').toUpperCase();
     if (placa === 'AAA0000') {
         return res.json({
             placa: 'AAA0000',
