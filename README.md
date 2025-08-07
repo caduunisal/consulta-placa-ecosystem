@@ -22,7 +22,7 @@ Acessos
 - Ir para a pasta frontend e rodar:
     npm start
 - Backend: http://localhost:5000/api/consulta?placa=AAA0000
-- Frontend: http://localhost:3001
+- Frontend: http://localhost:3000
 
 
 Observações
